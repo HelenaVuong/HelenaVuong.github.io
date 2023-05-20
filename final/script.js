@@ -26,7 +26,7 @@ toggleButton.addEventListener('click', function() {
 
   cloudImgs.forEach(function(cloudImg) {
     if (isDarkMode) {
-      cloudImg.src = 'assets/img/star.png';
+      cloudImg.src = 'assets/img/Star.png';
     } else {
       cloudImg.src = 'assets/img/cloud.png';
     }

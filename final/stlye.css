@@ -2,14 +2,34 @@
 #header{
     width:100%;
     height:100vh;
-    background-image: url(assets/img/fullbackground.png);
     background-size: cover;
     background-position: center;
 
 }
 
+#header.old-background{
+    background-image: url(assets/img/bigbackground.png);
+}
+:root{
+    --first-color: rgb(33, 87, 125);
+}
+
+.dark-mode {
+    --first-color: #fff;
+
+}
+html.dark-mode {
+    background-image: url(assets/img/nightbackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right center;
+
+}
+html.dark-mode .c1 img {
+    box-shadow: 8px 8px 5px #1d3c63; 
+  }
 nav{
-    display:flex;
+    display:flex; 
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -36,7 +56,7 @@ nav ul li{
     margin: 10px 20px;
 }
 nav ul li a:hover{
-    color: rgb(33, 87, 125);
+    color: var(--first-color);
 }
 .header{
     font-size: 25px;
@@ -50,15 +70,8 @@ nav ul li a:hover{
 .header-text h1{
     font-size:80px;
     margin-top: 20px;
-    color: rgb(33, 87, 125);
+    color: var(--first-color);
 }
-
-
-
-
-
-
-
 
 
 
@@ -79,10 +92,10 @@ html{
     font-size: 10px;
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100%;
-   
     background-image: url(assets/img/bigbackground.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 #about{
@@ -110,7 +123,7 @@ html{
 .sub-title{
     font-size:60px;
     font-weight:600;
-    color: rgb(33, 87, 125);
+    color: var(--first-color);
 }
 
 .description{
@@ -127,7 +140,7 @@ html{
 
 .des-links:hover{
     text-decoration: underline;
-    color: rgb(33, 87, 125);
+    color: var(--first-color);
     transition: 0.5s;
 }
 
@@ -162,7 +175,7 @@ html{
 .text{
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.6)rgb(33, 87, 125));
+    background: linear-gradient(rgba(0,0,0,0.6)var(--first-color));
     border-radius: 10px;
     display:flex;
     flex-direction: column;
@@ -170,7 +183,7 @@ html{
 }
 
 .text:hover{
-    color: rgb(33, 87, 125);
+    color: var(--first-color);
 }
 
 .work:hover img{
@@ -211,3 +224,75 @@ html{
     }
 }
 
+#toggleButton{
+    width:50px;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+nav ul{
+   flex: 1;
+   text-align: right; 
+}
+
+
+html.dark-mode #cloud1  {
+    right: 90px; 
+    top: 300px;  
+    scale:.9;
+    animation: none; 
+}
+html.dark-mode #cloud2 {
+    top: -70px;
+
+    animation: none; 
+}
+html.dark-mode #cloud3 {
+    animation: none; 
+    
+}
+
+html.dark-mode #cloud2{
+    position: absolute;
+    animation: twinkling2 3s ease-in 0s infinite;
+    scale: .3;
+    
+  }
+  html.dark-mode #cloud1{
+    position: absolute;
+    animation: twinkling 3s ease-in 0s infinite;
+    scale: .7;
+    
+  }
+
+  html.dark-mode #cloud3{
+    right: 150px;
+    position: absolute;
+    animation: twinkling 3s ease-in 0s infinite;
+    right: 200px;
+    top: 1170px;
+    scale:.8;
+  }
+  
+  @keyframes twinkling {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes twinkling2 {
+    0% {
+      opacity: 1;
+    }
+    30% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
